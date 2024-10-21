@@ -5,20 +5,20 @@ function Footer() {
       <footer>
         <img src={logo} alt="Footer logo"/>
         <div>
-          Doormat Navigation
+          <h2>NAVIGATION</h2>
           <nav>
             <ul>
-              <li><a href="/home">Home</a></li>
+              <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/menu">Menu</a></li>
-              <li><a href="/reservations">Reservations</a></li>
+              <li><a href="/booking">Reservations</a></li>
               <li><a href="/orderonline">Order Online</a></li>
               <li><a href="/login">Login</a></li>
             </ul>
           </nav>
         </div>
         <div>
-          Contact
+          <h2>CONTACTS</h2>
           <nav>
             <ul>
               <li>Adress</li>
@@ -28,7 +28,7 @@ function Footer() {
           </nav>
         </div>
         <div>
-          Social Media links
+          <h2>SOCIAL MEDIA LINKS</h2>
           <nav>
             <ul>
               <li>
