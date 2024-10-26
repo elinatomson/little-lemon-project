@@ -9,6 +9,41 @@
     color: #333333;
 }
 
+h1 {
+    font-family: "Markazi Text", serif;
+    margin: 0;
+    font-size: 48pt;
+    color: #F4CE14;
+}
+
+h2 {
+    font-family: "Markazi Text", serif;
+    margin: 0;
+    font-size: 30pt;
+    color: #495E57;
+}
+
+h3 {
+    font-family: "Karla", sans-serif;
+    margin: 0;
+}
+
+p {
+    font-family: "Karla", sans-serif;
+    text-align: justify;
+    font-size: 20pt;
+}
+
+button {
+    padding: 16px;
+    border-radius: 16px;
+    border: none;
+    background-color: #495E57;
+    color: white;
+    font-family: "Markazi Text", serif;
+    font-size: 18pt;
+}
+
 header {
     grid-column: 3 / 11;
     display: grid;
@@ -38,12 +73,9 @@ ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-
-ul {
     text-decoration: none;
     font-family: "Markazi Text", serif;
-    font-size: 18pt;
+    font-size: 19pt;
     color: #495E57;
 }
 
@@ -56,9 +88,9 @@ ul a {
     display: grid;
     grid-template-columns: 1fr auto;
     grid-column: 3 / 11;
-    align-items: center;
-    padding: 20px;
+    padding: 0 20px 20px 20px;
     background-color: #EDEFEE;
+    align-items: center;
 }
 
 .hero-section img {
@@ -67,41 +99,119 @@ ul a {
     border-radius: 16px;
 }
 
-h1 {
-    font-family: "Markazi Text", serif;
-    margin: 0;
+.specials-section {
+    display: grid;
+    grid-column: 3 / 11;
+}
+
+.specials-heading {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-bottom: 20px;
+}
+
+.specials-section h2 {
     font-size: 40pt;
-    color: #F4CE14;
 }
 
-h2 {
-    font-family: "Markazi Text", serif;
-    margin: 0;
+.specials-section h3 {
     font-size: 18pt;
-    color: #495E57;
 }
 
-p {
-    font-family: "Karla", sans-serif;
-    text-align: justify;
+.specials-card{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.specials-card article {
+    background-color: #EDEFEE;
+    border-radius: 16px 16px 0 0;
+}
+
+.dish-image {
+    border-radius: 16px 16px 0 0;
+    height: 180px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.dish-details {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0 20px 0 20px;
+}
+
+.dish-details p {
+    color: red;
+    font-size: 18pt;
+}
+
+.card-description {
+    padding: 0 20px 0 20px;
     font-size: 16pt;
 }
 
-button {
-    padding: 16px;
+.order-delivery {
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 0 20px 20px 20px;
+    align-items: center;
+}
+
+.delivery-logo {
+    height: 16pt;
+}
+
+.testimonials-section {
+    display: grid;
+    grid-column: 3 / 11;
+    padding: 20px;
+    margin: 20px 0 20px 0;
+    background-color: #EDEFEE;
+}
+
+.testimonials-section h2 {
+    text-align: center;
+    font-size: 40pt;
+    margin-bottom: 20px;
+}
+
+.testimonials-section section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.testimonials-section article {
+    background-color: white;
     border-radius: 16px;
-    border: none;
-    background-color: #495E57;
-    color: white;
-    font-family: "Markazi Text", serif;
-    font-size: 18pt;
+    padding: 20px;
+}
+
+.rating {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) auto;
+}
+
+.filled-star {
+    color: #F4CE14;
+}
+
+.empty-star {
+    color: #EDEFEE;
+}
+
+.testimonials-section p {
+    font-size: 14pt;
+    text-align: center;
 }
 
 footer {
     display: grid;
-    grid-template-columns: auto 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-column: 3 / 11;
-    justify-items: center;
 }
 
 footer img {
@@ -115,6 +225,38 @@ footer div {
 
 footer h2 {
     color: #F4CE14;
+    font-size: 30px;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 3 / 11;
+    padding-bottom: 20px;
+    align-items: center;
+}
+
+.image-section {
+    position: relative;
+    height: 260px;
+}
+
+.image {
+    height: 200px;
+    width: 200px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.image-b {
+    top: 60px;
+    left: 100px;
+    position: relative;
+}
+
+.image-a {
+    position: absolute;
+    right: 80px;
 }
 
 @media (max-width: 768px) {
@@ -135,6 +277,10 @@ footer h2 {
         align-items: center;
     }
 
+    h1 {
+        font-size: 40pt;
+    }
+
     .hero-section {
         grid-template-columns: 1fr;
     }
@@ -144,6 +290,31 @@ footer h2 {
         margin-top: 20px;
         max-width: 100%;
         height: auto;
+    }
+
+    .specials-card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .testimonials-section section {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+    }
+
+    .image-a {
+        position: absolute;
+        right: 0;
+    }
+
+    .image-b {
+        top: 60px;
+        left: 0;
+        position: relative;
     }
 
     footer {
