@@ -42,6 +42,7 @@ button {
     color: white;
     font-family: "Markazi Text", serif;
     font-size: 18pt;
+    cursor: pointer;
 }
 
 header {
@@ -259,11 +260,45 @@ footer h2 {
     right: 80px;
 }
 
+form {
+    grid-column: 5 / 10;
+    display: grid;
+    width: 400px;
+    font-family: "Markazi Text", serif;
+    font-size: 20pt;
+    color: #495E57;
+    background-color: #EDEFEE;
+    padding: 20px;
+    border-radius: 16px;
+}
+
+form input, select {
+    font-family: "Markazi Text", serif;
+    font-size: 16pt;
+    color: grey;
+    border-radius: 8px;
+    border-width: 1px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+}
+
+form button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
 @media (max-width: 768px) {
     .body {
         display: flex;
         flex-direction: column;
         margin: 10px;
+        align-items: center;
     }
 
     header {
@@ -315,6 +350,18 @@ footer h2 {
         top: 60px;
         left: 0;
         position: relative;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        font-family: "Markazi Text", serif;
+        font-size: 20pt;
+        color: #495E57;
+        background-color: #EDEFEE;
+        padding: 20px;
+        border-radius: 16px;
     }
 
     footer {
