@@ -8,6 +8,7 @@ function BookingForm(props) {
   const [selectedTime, setSelectedTime] = useState("");
   const [guests, setGuests] = useState("");
   const [occasion, setOccasion] = useState("");
+  const [errors, setErrors] =useState([])
 
   const today = new Date().toISOString().split("T")[0];
 
@@ -21,6 +22,34 @@ function BookingForm(props) {
 
   const submitForm = (e) => {
     e.preventDefault();
+
+    setErrors([]);
+
+    const newErrors = [];
+
+    if (name.length < 2) {
+      newErrors.push("name");
+    } else if (name.length > 20) {
+      newErrors.push("name_length");
+    }
+
+    if (email.length < 5) {
+      newErrors.push("email");
+    } else if (email.length > 30) {
+      newErrors.push("email_length");
+    }
+
+    if ( guests < 1) {
+      newErrors.push("min_guests");
+    } else if (guests > 10) {
+      newErrors.push("max_guests");
+    }
+
+    setErrors(newErrors);
+    if (newErrors.length > 0) {
+      return;
+    }
+
     navigate('/bookingConfirmed', {
       state: {
         name,
@@ -46,9 +75,21 @@ function BookingForm(props) {
       <p>Please fill in the form below.</p>
 
       <label htmlFor="name">Your name</label>
+        {errors.includes("name") && (
+          <p className="alert">Too short (min 2 characters).</p>
+        )}
+        {errors.includes("name_length") && (
+          <p className="alert">Too long (max 20 characters).</p>
+        )}
       <input onChange={(e) => setName(e.target.value)} type="text" id="name" placeholder='Insert Your name' value={name} required/>
 
       <label htmlFor="email">Your email</label>
+        {errors.includes("email") && (
+          <p className="alert">Too short (min 5 characters).</p>
+        )}
+        {errors.includes("email_length") && (
+          <p className="alert">Too long (max 30 characters).</p>
+        )}
       <input onChange={(e) => setEmail(e.target.value)} type="email" id="email" placeholder='Insert Your email' value={email} required/>
 
       <label htmlFor="res-date">Choose date</label>
@@ -67,10 +108,16 @@ function BookingForm(props) {
       </select>
 
       <label htmlFor="guests">Number of guests</label>
-      <input onChange={(e) => setGuests(e.target.value)} type="number" min="1" max="10" id="guests" placeholder='Insert number of guests' value={guests} required/>
+        {errors.includes("min_guests") && (
+          <p className="alert">There has to be at least 1 guest.</p>
+        )}
+        {errors.includes("max_guests") && (
+          <p className="alert">The maximum number of guests is 10.</p>
+        )}
+      <input onChange={(e) => setGuests(e.target.value)} type="number" id="guests" placeholder='Insert number of guests' value={guests} required/>
 
       <label htmlFor="occasion">Occasion</label>
-      <select onChange={(e) => setOccasion(e.target.value)} id="occasion" value={occasion}>
+      <select onChange={(e) => setOccasion(e.target.value)} id="occasion" value={occasion} required>
         <option value="" disabled>
           Choose an occasion
         </option>
@@ -78,7 +125,7 @@ function BookingForm(props) {
         <option>Anniversary</option>
         <option>Other</option>
       </select>
-      <button type="submit">Make Your reservation</button>
+      <button type="submit" disabled={!name || !email || !date || !selectedTime || !guests || !occasion}>Make Your reservation</button>
     </form>
   );
 };
