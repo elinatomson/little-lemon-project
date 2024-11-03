@@ -19,7 +19,7 @@ function BookingForm(props) {
     props.updateTimes(selectedDate);
   };
 
-  const handleSubmit = (e) => {
+  const submitForm = (e) => {
     e.preventDefault();
     navigate('/bookingConfirmed', {
       state: {
@@ -41,7 +41,7 @@ function BookingForm(props) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={submitForm}>
       <h1>Book a table</h1>
       <p>Please fill in the form below.</p>
 

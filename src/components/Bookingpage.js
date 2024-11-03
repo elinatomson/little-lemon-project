@@ -1,6 +1,6 @@
-import BookingForm from "./sections/BookingForm";
+import BookingForm from "./sections/BookingForm.js";
 import { useReducer } from 'react';
-import { fetchAPI } from "../bookingAPI"
+import { fetchAPI } from "../bookingAPI.js"
 
 function BookingPage() {
 
