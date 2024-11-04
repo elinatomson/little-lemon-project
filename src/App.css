@@ -45,6 +45,11 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: #333333;
+    transition: 1s;
+}
+
 button:disabled {
     background-color: grey;
     color: rgb(191, 188, 188);
@@ -89,6 +94,11 @@ ul {
 ul a {
     text-decoration: none;
     color: #495E57;
+}
+
+ul a:hover {
+    color: #F4CE14;
+    transition: 1s;
 }
 
 .hero-section {
@@ -292,6 +302,7 @@ form input, select {
 form button {
     margin-top: 20px;
     margin-bottom: 20px;
+    width: 100%;
 }
 
 form p {

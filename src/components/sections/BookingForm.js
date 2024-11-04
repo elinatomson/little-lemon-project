@@ -1,4 +1,4 @@
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useState } from 'react';
 
 function BookingForm(props) {
@@ -125,7 +125,10 @@ function BookingForm(props) {
         <option>Anniversary</option>
         <option>Other</option>
       </select>
-      <button type="submit" disabled={!name || !email || !date || !selectedTime || !guests || !occasion}>Make Your reservation</button>
+      <button type="submit" aria-label="Make your reservation" disabled={!name || !email || !date || !selectedTime || !guests || !occasion}>Make Your reservation</button>
+      <Link to="/" aria-label="Cancel">
+        <button className='cancel-button'>Cancel</button>
+      </Link>
     </form>
   );
 };

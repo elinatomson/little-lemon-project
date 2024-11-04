@@ -11,28 +11,28 @@ function Specials() {
     ]
 
     return (
-      <div className='specials-section'>
-        <section className='specials-heading'>
-            <h2>Specials</h2>
-            <button>Online Menu</button>
-        </section>
-        <section className='specials-card'>
-            {specials.map((special) => (
-                <article key={special.name}>
-                    <img src={special.image} className='dish-image' alt={special.name}/>
-                    <span className='dish-details'>
-                        <h3>{special.name}</h3>
-                        <p>${special.price}</p>
-                    </span>
-                    <p className='card-description'>{special.description}</p>
-                    <span className='order-delivery'>
-                        <h3>Order a delivery</h3>
-                        <img src={logo} className='delivery-logo' alt="Delivering logo"/>
-                    </span>
-                </article>
-            ))}
-        </section>
-      </div>
+        <div className='specials-section'>
+            <section className='specials-heading'>
+                <h2>Specials</h2>
+                <button aria-label="Online menu">Online Menu</button>
+            </section>
+            <section className='specials-card'>
+                {specials.map((special) => (
+                    <article key={special.name}>
+                        <img src={special.image} className='dish-image' alt={special.name}/>
+                        <span className='dish-details'>
+                            <h3>{special.name}</h3>
+                            <p>${special.price}</p>
+                        </span>
+                        <p className='card-description'>{special.description}</p>
+                        <span className='order-delivery'>
+                            <h3>Order a delivery</h3>
+                            <img src={logo} className='delivery-logo' alt="Delivering logo"/>
+                        </span>
+                    </article>
+                ))}
+            </section>
+        </div>
     );
   };
 

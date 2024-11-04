@@ -10,7 +10,7 @@ function HeroSection() {
             <p>Little Lemon is a charming neighborhood bistro that serves simple food and classic cocktails in a lively but casual environment.
                 The restaurant features a locally-sourced menu with daily specials.
             </p>
-            <Link to="/booking">
+            <Link to="/booking" aria-label="Reserve a table">
               <button>Reserve a Table</button>
             </Link>
         </section>

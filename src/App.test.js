@@ -8,16 +8,6 @@ jest.mock('../src/bookingAPI');
 
 describe('BookingPage Component', () => {
 
-  const fillFormAndSubmit = (name, email, guests) => {
-    fireEvent.change(screen.getByLabelText(/Your name/i), { target: { value: name } });
-    fireEvent.change(screen.getByLabelText(/Your email/i), { target: { value: email } });
-    fireEvent.change(screen.getByLabelText(/Choose date/i), { target: { value: '2024-11-03' } });
-    fireEvent.change(screen.getByLabelText(/Choose time/i), { target: { value: '18:00' } });
-    fireEvent.change(screen.getByLabelText(/Number of guests/i), { target: { value: guests } });
-    fireEvent.change(screen.getByLabelText(/Occasion/i), { target: { value: 'Birthday' } });
-    fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
-  };
-
   test('initializeTimes should fetch times for the current date', () => {
     // Mock fetchAPI to return specific times
     const mockTimes = ["18:00", "19:00", "20:00"];
@@ -72,7 +62,7 @@ describe('BookingForm Component', () => {
 
   test('displays error message when name, email or no of guests are too short', () => {
     fillFormAndSubmit('A', 'a@a', '0');
-    fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Make Your reservation/i }));
     expect(screen.getByText(/too short \(min 2 characters\)/i)).toBeInTheDocument();
     expect(screen.getByText(/too short \(min 5 characters\)/i)).toBeInTheDocument();
     expect(screen.getByText(/there has to be at least 1 guest/i)).toBeInTheDocument();
@@ -80,7 +70,7 @@ describe('BookingForm Component', () => {
 
   test('displays error message when name, email or no of guests are too long', () => {
     fillFormAndSubmit('Aaaaaaaaaaaaaaaaaaaaaa', 'Aaaaaaaaaaaaaaaaaaaaa@aaaaaaaaaa.aaaaaaaaaaa', '16');
-    fireEvent.click(screen.getByRole('button', { name: /make your reservation/i }));
+    fireEvent.click(screen.getByRole('button', { name: /Make Your reservation/i }));
     expect(screen.getByText(/too long \(max 20 characters\)/i)).toBeInTheDocument();
     expect(screen.getByText(/too long \(max 30 characters\)/i)).toBeInTheDocument();
     expect(screen.getByText(/the maximum number of guests is 10./i)).toBeInTheDocument();

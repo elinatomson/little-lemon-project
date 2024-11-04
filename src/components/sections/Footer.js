@@ -5,9 +5,9 @@ function Footer() {
     return (
       <footer>
         <img src={logo} alt="Footer logo"/>
-        <div>
+        <section>
           <h2>NAVIGATION</h2>
-          <nav>
+          <nav aria-label="Main navigation">
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/about">About</Link></li>
@@ -17,30 +17,30 @@ function Footer() {
               <li><Link to="/login">Login</Link></li>
             </ul>
           </nav>
-        </div>
-        <div>
+        </section>
+        <section>
           <h2>CONTACTS</h2>
-          <nav>
+          <nav aria-label="Contact information">
             <ul>
               <li>Adress</li>
               <li>Phone number</li>
               <li>Email</li>
             </ul>
           </nav>
-        </div>
-        <div>
+        </section>
+        <section>
           <h2>SOCIAL MEDIA LINKS</h2>
-          <nav>
+          <nav aria-label="Social media links">
             <ul>
               <li>
-                <a href="/home">Facebook</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">Facebook</a>
               </li>
               <li>
-                <a href="/about">Instagram</a>
+                <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
               </li>
             </ul>
           </nav>
-        </div>
+        </section>
       </footer>
     );
   };

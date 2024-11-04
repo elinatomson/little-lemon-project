@@ -7,7 +7,7 @@ function SuccessfulBooking() {
   return (
     <span className='bookingConfirmation'>
         <h1>Hi {name}! You have booked a table for {guests} on {date} at {selectedTime} for a {occasion} party.</h1>
-        <button><Link to="/">Back to homepage</Link></button>
+        <button aria-label="Back to homepage"><Link to="/">Back to homepage</Link></button>
     </span>
   );
 };
